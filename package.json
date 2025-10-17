@@ -1,0 +1,36 @@
+{
+  "name": "game-launcher",
+  "version": "0.1.3",
+  "description": "Local game launcher",
+  "author": "Jackson",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MRDEAFALT/GameLauncher.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder -w",
+    "publish": "electron-builder -w --publish always"
+  },
+  "build": {
+    "appId": "com.jackson.gamelauncher",
+    "productName": "Game Launcher",
+    "files": ["**/*"],
+    "win": {
+      "target": "nsis",
+      "icon": "icons/icon.png",
+      "publish": ["github"]
+    },
+    "publish": [
+      { "provider": "github", "owner": "MRDEAFALT", "repo": "GameLauncher" }
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
